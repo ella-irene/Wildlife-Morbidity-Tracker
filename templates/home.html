@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock head %}
+
+{% block content %}
+    <section>
+        <p class="text-prominent"> This dataset includes events of wildlife morbidity and mortality in Minnesota collected by 
+            the Wildlife Health Information Sharing Partnership (WHISPers) from January 1, 1992 to January 1, 2023. 
+            Each datapoint includes county-level locations, onset and ending dates, species affected, and a diagnosis. 
+            The data are opportunistically collected and do not reflect every morbidity or mortality event in Minnesota. </p>  
+    </section>
+
+    <a href="{{ url_for('searchTheData') }}"><button>Click here to get started</button></a>
+{% endblock content %}

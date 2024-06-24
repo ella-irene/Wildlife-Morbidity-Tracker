@@ -1,0 +1,24 @@
+  .results-text {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 14px;
+  }
+
+  p1.results-normal {
+    font-size: 26px;
+    color: #5c374C;
+  }
+
+  .mainText {
+    color: #CD5701;
+    font-weight: lighter;
+    font-size: 25pt;
+    padding: .5em;
+  }
+
+  .secondaryText {
+    color: #CD5701;
+    font-weight: bolder;
+  }

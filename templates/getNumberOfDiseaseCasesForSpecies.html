@@ -1,0 +1,50 @@
+{% extends "searchTheData.html" %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/searchTheData.css') }}">  
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/results/mainNumberResults.css') }}"> 
+{% endblock head %}
+
+{% block content %} 
+{% if result is not defined %}
+<div class = "query-introduction">
+    <h2 class="query-header">Get Number of Disease Cases for Species</h2>
+    <h3 class="query-subheader">returns the number of reported cases of a given disease affecting a given species</h3>
+</div>
+
+    <form class="option-group" method="POST" id="number-of-disease-cases-for-species"> 
+    <h2>Select a combination of filters:</h2>
+    <select name="disease-selection" required>
+        <option value="" disabled selected>Select a disease</option>
+        {% for disease in valid_diseases %}
+            <option value="{{disease}}">{{disease}}</option>
+        {% endfor %}
+    </select>
+
+    <select name="species-selection" required>
+        <option value="" disabled selected>Select a species</option>
+        {% for species in valid_species %}
+            <option value="{{species}}">{{species}}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">Submit</button>
+
+{% else %}
+    <div class = "results">
+        <div class="results-number">
+            <p1>{{ result }}</p1>
+        </div>
+        <div class="results-text">
+            <p1 class="results-normal"> cases of </p1>
+            <p1>{{ disease_filter }}</p1>
+            <p1 class="results-normal"> were found in </p1>
+            <p1> {{ species_filter }}. </p1>
+        </div>
+    </div>
+
+    <br> <br> <br>
+    <a href="{{ url_for('searchTheDataForQuery', query='See number of disease cases for a species') }}"><button class = "paramButton">Click to switch parameters</button></a>
+{% endif %}
+
+{% endblock content %}

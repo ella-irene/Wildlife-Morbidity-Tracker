@@ -1,0 +1,25 @@
+
+  .results-number {
+    font-size: 200px;
+    color: #5c374C;
+    font-weight: bolder;
+    margin-right:10px;
+    display: inline-block;
+    text-align: right;
+  }
+
+  .results-text {
+    color: #CD5701;
+    font-weight: bolder;
+    margin-left:10px;
+    display: inline-block;
+    text-align: left;
+    width: 400px;
+    border-radius: 8px;
+    margin-top: 14px;
+  }
+
+  p1.results-normal {
+    color: #5c374C;
+    font-weight: lighter;
+  }

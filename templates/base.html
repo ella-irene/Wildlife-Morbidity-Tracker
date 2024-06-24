@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+    <head>
+        {% block head %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <!-- Scripts for highlighting the current navbar menu the user is on -->
+        <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="{{ url_for('static', filename='js/activeNavElement.js') }}"></script>
+    
+        <title>
+            MN Wildlife Morbidity and Mortality Tracker
+        </title>
+        {% endblock head %}
+    </head>
+
+    <body>
+        <h1>MN Wildlife Morbidity and Mortality Tracker</h1>
+
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('searchTheData') }}">Search the Data</a></li>
+                <li><a href="{{ url_for('aboutTheData') }}">About the Data</a></li>
+            </ul>
+        </nav>
+
+        <hr class = "wide" >
+        
+        <div id="content">{% block content %}{% endblock content %}</div>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block head %}
+    {{ super() }}
+{% endblock head %}
+
+{% block content %}
+    <div class = "aboutTheData">
+
+    <h2>Summary of WHISPers</h2>
+
+    <p>
+        WHISpers stands for Wildlife Health Information Sharing Partnership. 
+        This program is an event-reporting system for morbidity and mortality events that take place in Minnesota and 
+        parts of Wisconsin. The goal of this program is to provide the public with reliable information on diseases that
+        have or are currently occurring in different areas of the state. Each record in the database can be filtered by 
+        species impacted, afllicting diseases, counties, and time range. To query the data, visit our
+        <a href="{{ url_for('searchTheData') }}">search the data page</a>.
+    </p>
+
+    <h2>Limitations</h2>
+
+    <p>
+        Each record/line in the dataset represents a reported “Event”. However, each event can have multiple counties, 
+        species, and/or diagnoses and there’s no clear indication which variables apply to which. 
+        Additionally, there is only one “number affected” variable per event, so due to the unspecified nature of the data 
+        we are unable to determine rankings for individual variables. Additionally, it's important to note that the data 
+        is opportunistically collected. This does not represent all morbidities and mortalities that 
+        occured in Minneosta during the specified time range. 
+    </p>
+
+    <h2>Modifications to the data</h2>
+
+    <p>
+        We deleted multiple columns in the data that were not relevant for the intended purposes for our project. 
+        These columns of data we removed from the original data included: Public, Event Type, Countries, and States (or equivalent). 
+        Addtionally, a few of the events did not provide an end date, in situations like these 
+        we used the start date in place of this. All data was taken from <a href="https://whispers.usgs.gov/home">https://whispers.usgs.gov/home</a>.
+    </p>
+
+</div>
+{% endblock content %}

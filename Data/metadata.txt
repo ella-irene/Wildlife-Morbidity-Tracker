@@ -1,0 +1,66 @@
+﻿Dataset Records
+________________
+
+
+
+
+When you find potentially useful datasets for your work, be sure to take these notes before navigating away!
+Search terms and search tool you used to find this dataset
+
+
+Searched for January 1, 1992 - January 1, 2023 in Minnesota, with no other parameters, on the WHISPers website (see URL below).
+URL - (Also be sure to download a local copy)
+Check to make sure the URL is stable from session to session (try opening the same URL in a different browser). If it is not stable, look for a “stable URL” or “permalink” or similar, or else document how you arrived at your data from the most recent stable URL on the website.
+
+
+https://whispers.usgs.gov/home
+Date Downloaded
+Datasets can be fluid, so be sure you record when you downloaded your data.
+
+
+event_summary_2023-04-03.csv
+
+Data was downloaded on 04/03/2023, containing data from January 1, 1992 - January 1, 2023. 
+Authorship
+Record the author, Primary Investigator, or Agency that created the dataset
+
+
+Wildlife Health Information Sharing Partnership
+Exact name of the dataset and version
+There are lots of similarly named datasets, so this will prevent mayhem later.
+
+
+Wildlife Health Information Sharing Partnership, Event Reporting System. Version 2.18.1
+
+
+Time period, geography, and/or scope covered
+January 1, 1992 - January 1, 2023 covering the state of Minnesota. 
+Location of dataset overview information
+URL or other description of where to find the overview. Note key aspects of the overview in your notes (such as time period, geography, etc). Be sure to save local copies as datasets can be fluid things and documentation may move or change.
+
+
+Overview
+* County-level locations
+* Data shared by hundreds of different stakeholders & natural resource managers, both in and outside the U.S.
+* “Meant to provide timely, accurate information on where wildlife disease events are occurring or have occurred for better preparation and decision making.”
+* “The information is opportunistically collected and does not reflect all the mortality events that occur in North America.”
+
+
+User Guide
+Location of technical documentation
+URL or other description, PLUS LOCAL COPIES THAT YOU SAVE. These may include a codebook, user guide, metadata, documentation, and terms of use. Be sure to save local copies as datasets can be fluid things and documentation may move or change.
+
+
+Metadata
+Data formats
+Note any useful information about the data formats found.
+Terms of Use
+Are there any restrictions on how you can use these data?
+
+
+https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/files/WHISPers%20Roles%20and%20Privileges_20220314.pdf
+
+
+Suggested Citation if provided
+You may adjust this citation later to accommodate a particular citation style, but always record the suggested citation in your notes.
+“Information presented on the WHISPers website is considered public information and may be distributed or copied. Use of the appropriate citation is requested. To direct readers to the entire WHISPers website, it is sufficient to give the address of the site in text: Retrieved [month, day, year], from the Wildlife Health Information Sharing Partnership event reporting system (https://whispers.usgs.gov). To cite data obtained from WHISPers, the following citation format is offered as a suggestion: Retrieved [month, day, year], from the Wildlife Health Information Sharing Partnership event reporting system on-line database, https://whispers.usgs.gov. Citations can be formatted to the style needed for your publication as long as there is sufficient information included to return the reader to the referenced information.”

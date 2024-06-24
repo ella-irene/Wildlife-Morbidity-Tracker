@@ -1,0 +1,128 @@
+body {
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: #E8FCFF;
+    text-align: center;
+}
+
+ul {
+    width: 65%;
+}
+
+li {
+    font-family: 'Corbel', 'Corbel light', sans-serif;
+    line-height: 1.2;
+}
+
+nav ul {
+    border: 2px #5c374C;
+    border-radius: 8px; 
+    list-style-type: none;
+    width: 96%;
+    text-align: center;
+}
+
+nav li {
+    display: inline-block;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+}
+
+nav li a {
+    display: inline-block;
+    text-align: center;
+    color: #5c374C;
+    text-decoration: none;
+    padding: 14px 16px;
+    font-size: 20px;
+    border-radius: 8px;
+}
+
+nav li a:hover {
+    color: #E8FCFF;
+    background-color: #5c374C;
+    border-radius: 8px;
+}
+
+nav li .active {
+    color:            #E8FCFF;
+    background-color: #5c374c;
+}
+
+h1 {
+    padding-top: .5em;
+    padding-bottom: .5em;
+    background-color:  #5c374C;
+    color: #E8FCFF;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 40px;
+}
+
+h1, h2 {
+   font-family: 'Corbel', 'Corbel light', sans-serif;
+}
+
+.aboutTheData p {
+    text-align: left;
+    padding-top: 0;
+}
+
+.aboutTheData h2 {
+    text-align: left;
+    margin-left: 10%;
+}
+
+p {
+    padding: 1em;
+    font-family: 'Corbel', 'Corbel light', sans-serif;
+    line-height: 1.4;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 18px;
+}
+
+button {
+    background-color: #CD5701;
+    border: 2px #E8FCFF;
+    color: #E8FCFF;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-radius: 8px;
+    display: inline-block;
+    font-size: 30px;
+    width: 30%;
+    text-decoration: none;
+}
+
+.paramButton {
+    background-color: #5c374C;
+    color:#E8FCFF; 
+    border: solid 2px #5c374C; 
+    font-size: 22px;
+    width: 30%;
+    padding-top: .5em;
+    padding-bottom:.5em;
+}
+
+button:hover {
+    background-color: #ff8c3e;
+}
+
+.paramButton:hover {
+    background-color: #9d8c92;
+    border: solid 2px #9d8c92; 
+}
+
+hr.wide {
+    border-top: 1px solid #5c374C;
+    border-radius: 4px;
+    width: 40%;
+    align-self: center;
+}
+
+p.text-prominent {
+    font-size: 25px; 
+    font-style: light;  
+}

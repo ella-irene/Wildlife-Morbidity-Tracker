@@ -1,0 +1,69 @@
+
+{% extends "searchTheData.html" %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/searchTheData.css') }}"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/results/tableResults.css') }}">   
+{% endblock head %}
+
+{% block content %} 
+{% if result is not defined %}
+<div class = "query-introduction">
+    <h2 class="query-header">Get All Data from County</h2>
+    <h3 class="query-subheader">returns all reports within a given county</h3>
+</div>
+
+    <form class="option-group" method="POST" id="all-data-from-county"> 
+    <h2>Select a combination of filters:</h2>
+    
+    <select name="county-selection" required>
+        <option value="" disabled selected>Select a county</option>
+        {% for county in valid_counties %}
+            <option value="{{county}}">{{county}}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">Submit</button>
+
+{% else %}
+    <div class = "results">
+        <div class="results-text">
+            <p1 class="results-normal"> See below for details on all reported events in </p1>
+            <p1 class = "secondaryText">{{ county_filter }}</p1>
+        </div>
+    </div>
+    
+    <div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Event ID</th>
+                <th>Number Affected</th>
+                <th>Start-Date</th>
+                <th>End-Date</th>
+                <th>County</th>
+                <th>Species</th>
+                <th>Disease</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in result %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+                <td>{{ row[4] }}</td>
+                <td>{{ row[5] }}</td>
+                <td>{{ row[6] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+
+    <br> <br> <br>
+    <a href="{{ url_for('searchTheDataForQuery', query='See all reports from a county') }}"><button class = "paramButton">Click to switch parameters</button></a>
+{% endif %}
+
+{% endblock content %}

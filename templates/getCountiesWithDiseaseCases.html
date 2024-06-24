@@ -1,0 +1,58 @@
+
+{% extends "searchTheData.html" %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/searchTheData.css') }}">   
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/results/tableResults.css') }}">
+{% endblock head %}
+
+{% block content %} 
+{% if result is not defined %}
+<div class = "query-introduction">
+    <h2 class="query-header">Get Counties with Disease Cases</h2>
+    <h3 class="query-subheader">returns a list of every county in MN with a reported case of the given disease</h3>
+</div>
+
+    <form class="option-group" method="POST" id="counties-with-disease-cases"> 
+    <h2>Select a combination of filters:</h2>
+
+    <select name="disease-selection" required>
+        <option value="" disabled selected>Select a disease</option>
+        {% for disease in valid_diseases %}
+            <option value="{{disease}}">{{disease}}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">Submit</button>
+
+{% else %}
+    <div class = "results">
+        <div class="results-text">
+            <p1 class="results-normal"> The following counties had reported cases of </p1>
+            <p1 class = "secondaryText">{{ disease_filter }}</p1>
+            <p1 class="results-normal"> in Minnesota: </p1>
+        </div>
+    </div>
+
+    <div class="list-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>County</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for county in result %}
+                <tr>
+                    <td>{{ county }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <br> <br> <br>
+    <a href="{{ url_for('searchTheDataForQuery', query='See all counties with cases of a disease') }}"><button class = "paramButton">Click to switch parameters</button></a>
+{% endif %}
+
+{% endblock content %}

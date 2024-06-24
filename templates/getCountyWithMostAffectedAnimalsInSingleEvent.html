@@ -1,0 +1,46 @@
+
+{% extends "searchTheData.html" %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/searchTheData.css') }}">   
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/results/mainTextResults.css') }}"> 
+{% endblock head %}
+
+{% block content %} 
+{% if result is not defined %}
+<div class = "query-introduction">
+    <h2 class="query-header">Get County with Most Affected Animals in a Single Event</h2>
+    <h3 class="query-subheader">returns the county in which the greatest number of animals were reported to have the given disease in a single report</h3>
+</div>
+
+    <form class="option-group" method="POST" id="count-with-most-affected-animals-in-single-event"> 
+    <h2>Select a combination of filters:</h2>
+
+    <select name="disease-selection" required>
+        <option value="" disabled selected>Select a disease</option>
+        {% for disease in valid_diseases %}
+            <option value="{{disease}}">{{disease}}</option>
+        {% endfor %}
+    </select>
+
+    <button type="submit">Submit</button>
+
+{% else %}
+    <div class = "results">
+        <div class = "results-text">
+            <p1 class="results-normal"> The county(s) with the most affected animals in a single event was: </p1> 
+            <div class="mainText">
+                <p1>{{ county }}</p1> 
+            </div>
+            <p1 class="results-normal"> with </p1>
+            <p1 class="secondaryText">{{ numAffected }}</p1>
+            <p1 class="results-normal"> animals affected by</p1>
+            <p1 class="secondaryText">{{ disease_filter }}</p1>
+        </div>
+    </div>
+
+    <br> <br> <br>
+    <a href="{{ url_for('searchTheDataForQuery', query='See county with most affected animals in a single event') }}"><button class = "paramButton">Click to switch parameters</button></a>
+{% endif %}
+{% endblock content %}

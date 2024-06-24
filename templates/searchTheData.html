@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/searchTheData.css') }}">
+{% endblock head %}
+
+{% block content %}
+    <p class="text-prominent"> Welcome to our query page! <br> To search the data, select a query from the dropdown below.</p>
+    <div class="dropdown">
+        <a href="{{ url_for('searchTheData') }}"><button class = "searchTheDataBTN">Select a query</button></a>
+        <div class="dropdown-content">
+            {% for query_name, query_view in valid_queries.items() %}
+            <a href="{{ url_for('searchTheDataForQuery', query=query_name) }}">{{ query_name }}</a>
+            {% endfor %}
+        </div>
+      </div>
+{% endblock content %}
+
+

@@ -1,0 +1,66 @@
+{% extends "searchTheData.html" %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/searchTheData.css') }}">  
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/results/mainTextResults.css') }}">  
+{% endblock head %}
+
+{% block content %} 
+{% if result is not defined %}
+<div class = "query-introduction">
+    <h2 class="query-header">Get Species with Most Affected Animals in a Single Event</h2>
+    <h3 class="query-subheader">returns the species with the most reported cases of a given disease in a given county, in a single report</h3>
+</div>
+
+    <form class="option-group" method="POST" id="species-with-most-affected-animals-in-single-event"> 
+    <h2>Select a combination of filters:</h2>
+
+    <select name="disease-selection" required>
+        <option value="" disabled selected>Select a disease</option>
+        {% for disease in valid_diseases %}
+            <option value="{{disease}}">{{disease}}</option>
+        {% endfor %}
+    </select>
+    
+    <select name="county-selection" required>
+        <option value="" disabled selected>Select a county</option>
+        {% for county in valid_counties %}
+            <option value="{{county}}">{{county}}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">Submit</button>
+
+{% else %}
+    {% if result == [] %}
+    <div class = "results">
+        <div class = "results-text">
+            <p1 class="results-normal"> There are no reported species to have suffered </p1> 
+            <p1 class="secondaryText">{{ disease_filter }}</p1> 
+            <p1 class="results-normal"> in</p1>
+            <p1 class="secondaryText">{{ county_filter }}</p1>
+        </div>
+    </div>
+
+    {% else %}
+    <div class = "results">
+        <div class = "results-text">
+            <p1 class="results-normal"> The species with the most affected animals in a single </p1> 
+            <p1 class="secondaryText">{{ disease_filter }}</p1> 
+            <p1 class="results-normal">event in</p1>
+            <p1 class="secondaryText">{{ county_filter }}</p1>
+            <p1 class= "results-normal">was:</p1>
+            <div class="mainText">
+                {% for row in result %}
+                    <p1>{{ row[0] }}</p1> 
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+        <br> <br> <br>
+    <a href="{{ url_for('searchTheDataForQuery', query='See species with most affected animals in a single event') }}"><button class = "paramButton">Click to switch parameters</button></a>
+{% endif %}
+
+{% endblock content %}

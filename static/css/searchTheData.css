@@ -1,0 +1,152 @@
+body {
+  background-image: url('../images/lightBlueBirds.png');
+  background-size: 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.option-group { 
+    float: center;
+    align-self: center;
+    border-radius: 8px;
+    padding: 1em;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 2%;
+}
+
+#number-of-disease-cases-in-county {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+h2.query-header {
+  color: #5c374C;
+  font-size: 36px;
+  font-weight: bolder;
+  margin: 10px;
+}
+
+h3.query-subheader {
+  font-size: 20px;
+  color: #5c374C;
+  font-style: italic;
+  font-weight: lighter;
+  white-space: pre-line;
+  margin: 0;
+  margin-bottom: 18px;
+}
+
+.option-group h2 {
+    color: #CD5701;
+    font-size: 25px;
+    font-weight: bolder;  
+}
+
+.option-group button{
+    border-color: #CD5701;
+    background-color: #E8FCFF;
+    border-style: solid;
+    border-width: 2px;
+    font-weight: bolder;
+    color: #CD5701;
+    border-radius: 8px;
+    padding: 10px 24px; 
+    font-size: 20px;
+    cursor: pointer; 
+    margin-right: 0.1em;
+    margin-left: 0.1em;
+    margin-bottom: 1em;
+}
+
+.option-group select {
+    background-color: #CD5701; 
+    border-radius: 8px;
+    border: 1px solid #CD5701; 
+    color: #E8FCFF; 
+    padding: 10px 24px; 
+    font-size: 20px;
+    cursor: pointer; 
+    float: center; 
+    margin-right: 0.1em;
+    margin-left: 0.1em;
+    margin-bottom: 1em;
+
+}
+  
+.option-group select:not(:last-child) {
+    border-right: none; 
+}
+  
+.option-group:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+  
+.option-group button:hover {
+    background-color: #CD5701; 
+    color: #E8FCFF;
+}
+
+.searchTheDataBTN {
+  color: #E8FCFF;
+  border-radius: 8px;
+  display: block;
+  font-size: 25px;
+  width: 100%;
+  font-family: 'Corbel', 'Corbel light', sans-serif;
+  text-decoration: none !important;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 40%;
+  padding-right: .2em;
+  padding-left: .2em;
+  font-family: 'Corbel', 'Corbel light', sans-serif;
+  text-decoration: none;
+
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #E8FCFF;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  min-width: 100%;
+  font-size: 14pt;
+  text-align: left;
+}
+
+.dropdown-content a {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  color: black;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .searchTheDataBTN {background-color: #ff8c3e;}
+
+.results {
+  font-family: 'Corbel', 'Corbel light', sans-serif;
+  font-size: 26px;
+  float: center;
+  padding-bottom: 1em;
+  padding-top: 1em;
+}
+
+a {
+  color: #5c374C; 
+  text-decoration: none; 
+}
+
+.query-introduction {
+  padding-top: 2em;
+}

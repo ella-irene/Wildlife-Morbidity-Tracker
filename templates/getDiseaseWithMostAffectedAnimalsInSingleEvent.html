@@ -1,0 +1,44 @@
+{% extends "searchTheData.html" %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/searchTheData.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/results/mainTextResults.css') }}">    
+{% endblock head %}
+
+{% block content %} 
+{% if result is not defined %}
+<div class = "query-introduction">
+    <h2 class="query-header">Get Disease with Most Affected Animals in a Single Event</h2>
+    <h3 class="query-subheader">returns the disease that affected the greatest number of animals of the given species in a single report</h3>
+</div>
+
+    <form class="option-group" method="POST" id="get-disease-with-most-affected-animals_in_single_event"> 
+    <h2>Select parameters:</h2>
+
+    <select name="species-selection" required>
+        <option value="" disabled selected>Select a species</option>
+        {% for species in valid_species %}
+            <option value="{{species}}">{{species}}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">Submit</button>
+
+{% else %}
+    <div class = "results">
+        <div class = "results-text">
+            <p1 class="results-normal"> The disease(s) with the most affected animals in a single event was: </p1> 
+            <div class="mainText">
+                <p1>{{ disease }}</p1> 
+            </div>
+            <p1 class="results-normal"> with </p1>
+            <p1 class="secondaryText">{{ numAffected }}</p1>
+            <p1 class="results-normal"> reported cases in the</p1>
+            <p1 class="secondaryText">{{ species_filter }}</p1>
+        </div>
+    </div>
+
+    <a href="{{ url_for('searchTheDataForQuery', query='See disease with most affected animals in single event') }}"><button class = "paramButton">Click to switch parameters</button></a>
+{% endif %}
+
+{% endblock content %}

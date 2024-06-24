@@ -1,0 +1,35 @@
+{% extends "searchTheData.html" %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/searchTheData.css') }}">  
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/results/tableResults.css') }}">  
+{% endblock head %}
+
+{% block content %} 
+<div class = "query-introduction"></div>
+    <h2 class="query-header">Get Valid Diseases</h2>
+    <h3 class="query-subheader">returns every cause of mortality/morbidity (termed "diseases") present in the database (note: diseases are separated in the data by confirmed diagnosis or suspected diagnosis)</h3>
+</div>
+
+<div class="table-container">
+    {% set num_columns = 4 %}
+    {% set num_rows = (result|length + num_columns - 1) // num_columns %}
+    <table>
+        <tbody>
+            {% for row in range(num_rows) %}
+                <tr>
+                {% for column in range(num_columns) %}
+                    {% set index = row + column * num_rows %}
+                    {% if index < result|length %}
+                        <td>{{ result[index] }}</td>
+                    {% else %}
+                        <td></td>
+                    {% endif %}
+                {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}
